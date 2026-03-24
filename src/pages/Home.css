@@ -1,0 +1,265 @@
+/* ========== Trang chủ: hero xanh là trọng tâm ========== */
+
+.home {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* --- Hero: chiếm phần lớn màn hình, full width --- */
+.home .hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: min(88vh, 920px);
+  padding: clamp(5.5rem, 12vh, 7rem) clamp(1.25rem, 4vw, 3rem) clamp(4rem, 10vh, 6rem);
+  text-align: center;
+  background:
+    radial-gradient(ellipse 120% 80% at 50% -30%, rgba(147, 197, 253, 0.45), transparent 50%),
+    radial-gradient(ellipse 60% 50% at 100% 50%, rgba(99, 102, 241, 0.25), transparent 55%),
+    radial-gradient(ellipse 50% 45% at 0% 80%, rgba(56, 189, 248, 0.2), transparent 50%),
+    linear-gradient(160deg, #1d4ed8 0%, #2563eb 28%, #3730a3 72%, #1e1b4b 100%);
+  color: #fff;
+}
+
+.home .hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.home .hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 90% 55% at 50% 100%,
+    rgba(255, 255, 255, 0.08),
+    transparent 45%
+  );
+  pointer-events: none;
+}
+
+.home .hero-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 52rem;
+  margin: 0 auto;
+}
+
+.home .hero-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+}
+
+.home .hero h1 {
+  font-size: clamp(2rem, 5.5vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.2);
+}
+
+.home .hero .hero-lead {
+  font-size: clamp(1.05rem, 2.4vw, 1.2rem);
+  line-height: 1.7;
+  margin-bottom: 2.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.home .hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 2rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #0f172a !important;
+  background: #ffffff !important;
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.home .hero-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.28);
+  background: #f8fafc !important;
+}
+
+.home .hero-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 1.85rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.home .hero-cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.18) !important;
+  border-color: rgba(255, 255, 255, 0.85);
+  transform: translateY(-2px);
+}
+
+/* --- Khu khóa học: nền phụ, bo góc trên “nổi” lên hero --- */
+.home .featured-courses {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin-top: -2.5rem;
+  padding: 2.75rem clamp(1.25rem, 4vw, 3rem) 3.5rem;
+  background: #f1f5f9;
+  border-radius: 28px 28px 0 0;
+  box-shadow: 0 -12px 40px rgba(15, 23, 42, 0.12);
+}
+
+.home .section-head {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.home .section-head h2 {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.02em;
+}
+
+.home .section-head p {
+  color: #64748b;
+  font-size: 0.95rem;
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+.home .featured-courses .loading-hint {
+  text-align: center;
+  color: #64748b;
+  padding: 2rem;
+  font-size: 1rem;
+}
+
+.home .empty-courses {
+  text-align: center;
+  padding: 2.25rem 1.5rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+  border: 1px solid #e2e8f0;
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+.home .empty-courses p {
+  color: #64748b;
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.home .empty-courses .hero-cta {
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.2);
+}
+
+.home .course-grid {
+  margin-top: 0;
+}
+
+.home .course-card {
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+}
+
+.home .course-card .btn-secondary {
+  margin-top: auto;
+  text-align: center;
+  background: #3b82f6;
+  color: #fff !important;
+}
+
+.home .course-card .btn-secondary:hover {
+  background: #2563eb;
+}
+
+/* ========== Chỉ trang chủ: navbar hòa vào hero ========== */
+body.page-home .navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.55) 0%,
+    rgba(15, 23, 42, 0.25) 55%,
+    transparent 100%
+  );
+  box-shadow: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+body.page-home .main-content {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .home .hero {
+    min-height: min(82vh, 800px);
+    padding-top: 5rem;
+  }
+
+  .home .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .home .hero-cta,
+  .home .hero-cta-secondary {
+    width: 100%;
+    max-width: 20rem;
+  }
+
+  .home .featured-courses {
+    margin-top: -1.5rem;
+    border-radius: 20px 20px 0 0;
+  }
+}
